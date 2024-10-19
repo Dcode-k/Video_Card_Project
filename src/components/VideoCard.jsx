@@ -8,7 +8,7 @@ function VideoCard({ image, videoSrc, onClick, onMouseEnter, highlightedIndex, i
     const baseScale = isHighlighted ? 1.2 : 1 - Math.abs(highlightedIndex - index) * 0.05; // Adjust the scaling factor for left/right cards
     
     // Calculate zIndex based on position relative to highlightedIndex
-    const zIndex = isHighlighted ? 3 : Math.max(1, 3 - Math.abs(highlightedIndex - index));
+    const zIndex = isHighlighted ? 5 : Math.max(1, 5 - Math.abs(highlightedIndex - index));
 
     return (
         <div
