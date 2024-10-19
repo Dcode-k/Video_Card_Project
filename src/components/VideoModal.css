@@ -10,7 +10,7 @@
 }
 
 .video-modal video {
-    width: 600px;
+    width: 10rem;
     max-width: 90vw;
     border-radius: 10px;
 }

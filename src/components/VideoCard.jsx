@@ -2,9 +2,13 @@ import React from 'react';
 import './VideoCard.css';
 
 function VideoCard({ image, videoSrc, onClick, onMouseEnter, highlightedIndex, index }) {
-    // Calculate scale based on position relative to the highlighted index
     const isHighlighted = highlightedIndex === index;
-    const baseScale = isHighlighted ? 1.2 : 1 - Math.abs(highlightedIndex - index) * 0.1; // Adjust the scaling factor for left/right cards
+
+    // Calculate scale based on position relative to the highlighted index
+    const baseScale = isHighlighted ? 1.2 : 1 - Math.abs(highlightedIndex - index) * 0.05; // Adjust the scaling factor for left/right cards
+    
+    // Calculate zIndex based on position relative to highlightedIndex
+    const zIndex = isHighlighted ? 3 : Math.max(1, 3 - Math.abs(highlightedIndex - index));
 
     return (
         <div
@@ -13,8 +17,8 @@ function VideoCard({ image, videoSrc, onClick, onMouseEnter, highlightedIndex, i
             onMouseEnter={onMouseEnter}
             style={{
                 transform: `scale(${baseScale})`,
-                zIndex: isHighlighted ? 2 : 1,
-                filter: isHighlighted ? 'none' : 'brightness(0.5)', // Darken non-highlighted cards
+                zIndex: zIndex, // Set zIndex based on calculated value
+                filter: isHighlighted ? 'none' : 'brightness(0.7)', // Darken non-highlighted cards
             }}
         >
             <img 

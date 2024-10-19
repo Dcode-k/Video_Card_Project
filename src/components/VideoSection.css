@@ -1,6 +1,6 @@
 .video-section {
     display: flex;
-    padding: 20px;
+    /* padding: 20px; */
     gap: 0;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -10,12 +10,11 @@
     transform: translate(-50%, -50%);
     align-items: center;
     justify-content: center;
-    height: 20rem;
+    height: 30rem;
+    width: 100%;
     /* margin-left: -rem; */
     border-radius: 15px;
-    /* border: 2px solid red; */
-    width: 80%;
-    overflow: hidden; 
+    /* background-color: red; */
 }
 
 .video-section.playing {
@@ -26,4 +25,6 @@
 .video-section::-webkit-scrollbar {
     display: none; 
 }
+
+
 

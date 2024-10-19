@@ -18,6 +18,7 @@ function VideoSection({ onVideoClick }) {
             image: 'https://img.youtube.com/vi/L_jWHffIx5E/0.jpg', // Thumbnail for Video 3
         },
         {
+            
             videoSrc: 'https://www.youtube.com/embed/9bZkp7q19f0',
             image: 'https://img.youtube.com/vi/9bZkp7q19f0/0.jpg', // Thumbnail for Video 4
         },
