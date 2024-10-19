@@ -1,0 +1,26 @@
+.video-section {
+    display: flex;
+    padding: 20px;
+    gap: 0;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    height: 20rem;
+    /* margin-left: -rem; */
+    border-radius: 15px;
+    overflow: hidden; 
+}
+
+.video-section.playing {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-section::-webkit-scrollbar {
+    display: none; 
+}
+
