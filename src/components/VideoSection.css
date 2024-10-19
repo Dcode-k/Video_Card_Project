@@ -9,9 +9,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     align-items: center;
+    justify-content: center;
     height: 20rem;
     /* margin-left: -rem; */
     border-radius: 15px;
+    /* border: 2px solid red; */
+    width: 80%;
     overflow: hidden; 
 }
 

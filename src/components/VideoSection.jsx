@@ -5,13 +5,28 @@ import VideoCard from './VideoCard';
 function VideoSection({ onVideoClick }) {
     const [highlightedIndex, setHighlightedIndex] = useState(2); // Default to the middle video index
     const videoList = [
-        'https://www.w3schools.com/html/movie.mp4',
-        'https://www.w3schools.com/html/movie.mp4',
-        'https://www.w3schools.com/html/movie.mp4',
-        'https://www.w3schools.com/html/movie.mp4',      
-        'https://www.w3schools.com/html/movie.mp4',
+        {
+            videoSrc: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            image: 'https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg', // Thumbnail for Video 1
+        },
+        {
+            videoSrc: 'https://www.youtube.com/embed/3JZ_D3ELwOQ',
+            image: 'https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg', // Thumbnail for Video 2
+        },
+        {
+            videoSrc: 'https://www.youtube.com/embed/L_jWHffIx5E',
+            image: 'https://img.youtube.com/vi/L_jWHffIx5E/0.jpg', // Thumbnail for Video 3
+        },
+        {
+            videoSrc: 'https://www.youtube.com/embed/9bZkp7q19f0',
+            image: 'https://img.youtube.com/vi/9bZkp7q19f0/0.jpg', // Thumbnail for Video 4
+        },
+        {
+            videoSrc: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+            image: 'https://img.youtube.com/vi/tgbNymZ7vqY/0.jpg', // Thumbnail for Video 5
+        },
     ];
-
+    
     const handleMouseEnter = (index) => {
         setHighlightedIndex(index);
     };
@@ -23,22 +38,17 @@ function VideoSection({ onVideoClick }) {
 
     return (
         <div className="video-section">
-            {videoList.map((videoSrc, index) => {
-                const isHighlighted = highlightedIndex === index;
-                const baseScale = 1.2; // Scale for the highlighted video
-                const scale = isHighlighted ? baseScale : 1 - Math.abs(highlightedIndex - index) * 0.15;
-
-                return (
-                    <VideoCard
-                        key={index}
-                        videoSrc={videoSrc}
-                        onClick={() => onVideoClick(videoSrc)}
-                        scale={scale}
-                        onMouseEnter={() => handleMouseEnter(index)}
-                        isHighlighted={isHighlighted}
-                    />
-                );
-            })}
+            {videoList.map((video, index) => (
+                <VideoCard
+                    key={index}
+                    videoSrc={video.videoSrc}
+                    image={video.image} // Pass the image URL
+                    onClick={() => onVideoClick(video.videoSrc)}
+                    highlightedIndex={highlightedIndex} // Pass the highlighted index
+                    index={index} // Pass the current index
+                    onMouseEnter={() => handleMouseEnter(index)}
+                />
+            ))}
         </div>
     );
 }
